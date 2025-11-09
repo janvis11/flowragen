@@ -7,7 +7,6 @@
   
   Transform complex retrieval-augmented generation workflows into intuitive visual diagrams. Build, test, and deploy production-ready RAG systems without writing a single line of code—unless you want to export it.
   
-  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
   [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
   [![React 18](https://img.shields.io/badge/react-18.2-blue.svg)](https://reactjs.org/)
   [![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)](https://fastapi.tiangolo.com/)
@@ -40,45 +39,6 @@ Export your visual workflow as executable Python code using LangGraph. The gener
 
 ---
 
-## Architecture
-
-Flowragen follows a clean separation between frontend visualization and backend execution:
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                     Frontend (React)                        │
-│  ┌─────────────┐  ┌──────────────┐  ┌──────────────┐      │
-│  │   Canvas    │  │  Node Palette │  │  Properties  │      │
-│  │   Editor    │  │   (12 Types)  │  │    Panel     │      │
-│  └──────┬──────┘  └──────────────┘  └──────────────┘      │
-│         │                                                    │
-│         │ Workflow Definition (JSON)                        │
-│         ▼                                                    │
-└─────────┼────────────────────────────────────────────────────┘
-          │
-          │ HTTP/REST API
-          │
-┌─────────▼────────────────────────────────────────────────────┐
-│                    Backend (FastAPI)                         │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐      │
-│  │   Workflow   │  │     Node     │  │    Config    │      │
-│  │   Executor   │  │   Registry   │  │   Manager    │      │
-│  └──────┬───────┘  └──────┬───────┘  └──────────────┘      │
-│         │                  │                                 │
-│         │                  │                                 │
-│         ▼                  ▼                                 │
-│  ┌─────────────────────────────────┐                        │
-│  │      LangGraph Pipeline         │                        │
-│  │   (Dynamic Graph Construction)  │                        │
-│  └─────────────────────────────────┘                        │
-│                    │                                         │
-│                    ▼                                         │
-│  ┌─────────────────────────────────┐                        │
-│  │    LLM Providers & Vector DBs   │                        │
-│  │  (Groq, OpenAI, FAISS, Chroma)  │                        │
-│  └─────────────────────────────────┘                        │
-└──────────────────────────────────────────────────────────────┘
-```
 
 ### Data Flow
 
@@ -533,7 +493,7 @@ flake8 .
 
 ## License
 
-This project is licensed under the MIT License. See [LICENSE](./LICENSE) for details.
+See [LICENSE](./LICENSE) for details.
 
 ---
 
