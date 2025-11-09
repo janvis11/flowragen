@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./public/flowragen-logo.svg" alt="Flowragen Logo" width="200"/>
+  <img src="./public/flowragen-logo.svg" alt="Flowragen Logo" width="100"/>
   
   # Flowragen
   
