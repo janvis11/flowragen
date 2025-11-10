@@ -149,67 +149,6 @@ Flowragen provides 12 specialized node types organized into 5 categories:
 
 ---
 
-## Quick Start
-
-### Prerequisites
-- Python 3.11 or higher
-- Node.js 16+ (for frontend development)
-- Git
-
-### Installation
-
-**1. Clone the repository**
-```bash
-git clone https://github.com/yourusername/flowragen.git
-cd flowragen
-```
-
-**2. Start the frontend**
-```bash
-# Using Python's built-in server (simplest)
-python -m http.server 3000
-
-# Or using Node.js (for development)
-npm install
-npm run dev
-```
-
-**3. Configure the backend**
-```bash
-cd backend
-python -m venv venv
-
-# Windows
-venv\Scripts\activate
-
-# Linux/Mac
-source venv/bin/activate
-
-pip install -r requirements.txt
-```
-
-**4. Add API keys (optional for demo mode)**
-
-Edit `backend/.env`:
-```env
-GROQ_API_KEY=your_groq_api_key_here
-DEFAULT_LLM_PROVIDER=groq
-```
-
-Get a free Groq API key at [console.groq.com](https://console.groq.com)
-
-**5. Start the backend**
-```bash
-python main.py
-```
-
-**6. Access the application**
-- Frontend: `http://localhost:3000`
-- Workflow Builder: `http://localhost:3000/workflow`
-- API Documentation: `http://localhost:8000/docs`
-
----
-
 ## Usage Guide
 
 ### Building Your First Workflow
@@ -410,86 +349,6 @@ Ensure all API keys are set in your deployment platform's environment configurat
 
 ---
 
-## Troubleshooting
-
-### Common Issues
-
-**Backend won't start**
-```bash
-# Check Python version
-python --version  # Should be 3.11+
-
-# Reinstall dependencies
-pip install -r requirements.txt --force-reinstall
-```
-
-**API key errors**
-```bash
-# Verify .env file exists
-ls backend/.env
-
-# Check configuration status
-curl http://localhost:8000/api/config
-```
-
-**Frontend connection issues**
-```bash
-# Verify backend is running
-curl http://localhost:8000/api/health
-
-# Check CORS settings in main.py
-```
-
-**Workflow execution fails**
-- Verify all nodes are properly connected
-- Check node configurations in properties panel
-- Inspect execution trace for specific error messages
-- Ensure API keys are valid and have sufficient quota
-
----
-
-## Roadmap
-
-### Planned Features
-
-- [ ] Custom node creation SDK
-- [ ] Workflow versioning and rollback
-- [ ] Collaborative editing (multi-user)
-- [ ] Advanced debugging tools (breakpoints, step-through)
-- [ ] Integration with external vector databases (Pinecone, Weaviate)
-- [ ] Workflow templates marketplace
-- [ ] Performance profiling and optimization suggestions
-- [ ] Automated testing framework for workflows
-- [ ] Multi-language support (TypeScript, Go, Rust code generation)
-
----
-
-## Contributing
-
-Contributions are welcome. Please follow these guidelines:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### Development Setup
-
-```bash
-# Install pre-commit hooks
-pip install pre-commit
-pre-commit install
-
-# Run tests
-cd backend
-pytest
-
-# Run linter
-flake8 .
-```
-
----
 
 ## License
 
@@ -508,13 +367,6 @@ Built with:
 
 ---
 
-## Support
-
-- Documentation: [Read the full docs](./QUICKSTART.md)
-- Issues: [GitHub Issues](https://github.com/yourusername/flowragen/issues)
-- Discussions: [GitHub Discussions](https://github.com/yourusername/flowragen/discussions)
-
----
 
 <div align="center">
   <p>Built for the RAG community by developers who believe in visual thinking.</p>
