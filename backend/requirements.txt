@@ -1,0 +1,28 @@
+# Core API Framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.5.0
+python-multipart>=0.0.6
+python-dotenv>=1.0.0
+
+# LLM & AI Libraries (latest compatible versions)
+
+groq>=0.4.0
+
+
+# LangChain (use latest to avoid conflicts)
+langchain>=0.1.0
+langchain-community>=0.0.10
+langchain-groq>=0.0.1
+langgraph>=0.0.26
+
+# Vector Stores & Embeddings
+faiss-cpu>=1.8.0
+sentence-transformers>=2.2.0
+
+# Document Processing
+pypdf>=3.17.0
+python-docx>=1.1.0
+
+# Utilities
+tiktoken>=0.5.0
