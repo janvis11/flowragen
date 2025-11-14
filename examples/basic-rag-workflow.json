@@ -1,0 +1,146 @@
+{
+  "name": "Basic RAG Pipeline",
+  "description": "A simple document Q&A workflow with retrieval-augmented generation",
+  "nodes": [
+    {
+      "id": "node-0",
+      "type": "document-loader",
+      "x": 100,
+      "y": 100,
+      "config": {
+        "source": "upload",
+        "path": "docs/",
+        "fileTypes": ["pdf", "txt", "docx"]
+      },
+      "inputs": 0,
+      "outputs": 1
+    },
+    {
+      "id": "node-1",
+      "type": "text-splitter",
+      "x": 400,
+      "y": 100,
+      "config": {
+        "chunkSize": 1000,
+        "chunkOverlap": 200,
+        "separator": "\n\n"
+      },
+      "inputs": 1,
+      "outputs": 1
+    },
+    {
+      "id": "node-2",
+      "type": "embedder",
+      "x": 700,
+      "y": 100,
+      "config": {
+        "model": "openai",
+        "modelName": "text-embedding-ada-002"
+      },
+      "inputs": 1,
+      "outputs": 1
+    },
+    {
+      "id": "node-3",
+      "type": "vector-store",
+      "x": 1000,
+      "y": 100,
+      "config": {
+        "type": "faiss",
+        "indexName": "default"
+      },
+      "inputs": 1,
+      "outputs": 1
+    },
+    {
+      "id": "node-4",
+      "type": "text-input",
+      "x": 700,
+      "y": 300,
+      "config": {
+        "text": "What is the main topic of these documents?"
+      },
+      "inputs": 0,
+      "outputs": 1
+    },
+    {
+      "id": "node-5",
+      "type": "retriever",
+      "x": 1000,
+      "y": 250,
+      "config": {
+        "topK": 3,
+        "scoreThreshold": 0.7
+      },
+      "inputs": 2,
+      "outputs": 1
+    },
+    {
+      "id": "node-6",
+      "type": "llm-answer",
+      "x": 1300,
+      "y": 250,
+      "config": {
+        "model": "gpt-4-turbo",
+        "temperature": 0.7,
+        "maxTokens": 1000
+      },
+      "inputs": 2,
+      "outputs": 1
+    },
+    {
+      "id": "node-7",
+      "type": "output-visualizer",
+      "x": 1600,
+      "y": 250,
+      "config": {
+        "format": "formatted"
+      },
+      "inputs": 1,
+      "outputs": 0
+    }
+  ],
+  "connections": [
+    {
+      "id": "conn-0",
+      "from": "node-0",
+      "to": "node-1"
+    },
+    {
+      "id": "conn-1",
+      "from": "node-1",
+      "to": "node-2"
+    },
+    {
+      "id": "conn-2",
+      "from": "node-2",
+      "to": "node-3"
+    },
+    {
+      "id": "conn-3",
+      "from": "node-3",
+      "to": "node-5"
+    },
+    {
+      "id": "conn-4",
+      "from": "node-4",
+      "to": "node-5"
+    },
+    {
+      "id": "conn-5",
+      "from": "node-5",
+      "to": "node-6"
+    },
+    {
+      "id": "conn-6",
+      "from": "node-4",
+      "to": "node-6"
+    },
+    {
+      "id": "conn-7",
+      "from": "node-6",
+      "to": "node-7"
+    }
+  ],
+  "timestamp": "2024-11-04T13:30:00.000Z"
+}
