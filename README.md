@@ -13,6 +13,12 @@
 </div>
 
 ---
+<img width="1365" height="594" alt="Screenshot 2025-12-03 131706" src="https://github.com/user-attachments/assets/4f314721-9fb0-4bd5-b7bb-b3c13ecf360c" />
+<img width="1365" height="595" alt="Screenshot 2025-12-03 131945" src="https://github.com/user-attachments/assets/a553a845-83e5-41d4-ac78-670c0e6f28c6" />
+<img width="1365" height="589" alt="Screenshot 2025-12-03 131821" src="https://github.com/user-attachments/assets/9ee65aa5-5932-4042-9703-56898d57c65a" />
+<img width="1365" height="597" alt="Screenshot 2025-12-03 131842" src="https://github.com/user-attachments/assets/a7e3a1b0-7fab-40f8-a068-5f23e9d39df7" />
+<img width="1365" height="595" alt="Screenshot 2025-12-03 131859" src="https://github.com/user-attachments/assets/15c0816d-eb13-487a-a334-d08e80abfca1" />
+<img width="1365" height="595" alt="Screenshot 2025-12-03 132014" src="https://github.com/user-attachments/assets/659acee3-5389-4bc2-bb6c-fa36821df4b7" />
 
 ## Why Flowragen?
 
